@@ -21,15 +21,8 @@ log = logging.getLogger(__name__)
 # =========================
 # 🔐 KEYS
 # =========================
-import os
-
-print("Available env vars:", list(os.environ.keys()))
-
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-
-print("Token exists:", bool(TELEGRAM_TOKEN))
-print("Chat ID exists:", bool(CHAT_ID))
 
 if not TELEGRAM_TOKEN or not CHAT_ID:
     raise RuntimeError(
